@@ -22,7 +22,7 @@ int main(){
 
     /* Without affecting the original tree inorder traversal*/
     node* curr = root;
-    while(!st.empty() && curr != nullptr){
+    while(!st.empty() || curr != nullptr){
         
         if(curr != NULL){
             st.push(curr);
@@ -38,7 +38,7 @@ int main(){
 
     /*Now for preorder*/
     node* curr = root;
-    while(!st.empty() && curr != nullptr){
+    while(!st.empty() || curr != nullptr){
 
         if(curr != NULL){
             cout<<curr;
@@ -56,7 +56,7 @@ int main(){
     /*Now for postorder*/
 
     node *curr = root, *temp;
-    while(!st.empty() && curr != nullptr){
+    while(!st.empty() || curr != nullptr){
 
         if(curr != NULL){
             if(curr->right){
