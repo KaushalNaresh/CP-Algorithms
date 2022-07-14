@@ -12,6 +12,12 @@
 
 class Solution {
 public:
+    
+    /*
+        Method 1 : Using inorder recursion and struct to store maximum, minimum of left and right subtree and bool value if its a BST
+        Time Complexity : O(H) where H is the height of a tree
+        Space Complexity : O(H) because of calling stack
+    */
     struct payload{
         bool isBST;
         TreeNode* max;
@@ -55,6 +61,12 @@ public:
         return ans->isBST;
     }
     
+    /*
+        Method 2 : Using stack we will traverse the tree in inorder fashion and check if numbers are in increasing order
+        Time Complexity : O(H) where H is height of tree
+        Space Complexity : O(H)
+    */
+    
     bool isValidBST(TreeNode* root) {
         
         vector<TreeNode*> stack;
@@ -76,5 +88,22 @@ public:
         }
         
         return true;
+    }
+    
+    /*
+        Method 3 : Using inorder recursion without using any struct
+        Time Complexity : O(H) where H is height of tree
+        Space Complexity : O(H)
+    */
+    
+    bool isValidBST(TreeNode* root) {
+        return isValidBST(root, NULL, NULL);
+    }
+
+    bool isValidBST(TreeNode* root, TreeNode* minNode, TreeNode* maxNode) {
+        if(!root) return true;
+        if(minNode && root->val <= minNode->val || maxNode && root->val >= maxNode->val)
+            return false;
+        return isValidBST(root->left, minNode, root) && isValidBST(root->right, root, maxNode);
     }
 };
