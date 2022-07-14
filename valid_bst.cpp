@@ -15,8 +15,8 @@ public:
     
     /*
         Method 1 : Using inorder recursion and struct to store maximum, minimum of left and right subtree and bool value if its a BST
-        Time Complexity : O(H) where H is the height of a tree
-        Space Complexity : O(H) because of calling stack
+        Time Complexity : O(N) where N is the number of nodes in a tree
+        Space Complexity : O(H) where H is the height of a tree
     */
     struct payload{
         bool isBST;
@@ -63,8 +63,8 @@ public:
     
     /*
         Method 2 : Using stack we will traverse the tree in inorder fashion and check if numbers are in increasing order
-        Time Complexity : O(H) where H is height of tree
-        Space Complexity : O(H)
+        Time Complexity : O(N) where N is the number of nodes
+        Space Complexity : O(H) where H is the height of a tree
     */
     
     bool isValidBST(TreeNode* root) {
