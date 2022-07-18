@@ -8,4 +8,4 @@ Helpful blog : https://hackernoon.com/14-patterns-to-ace-any-coding-interview-qu
 
 Quick Notes :
 
-Min heap in cpp : priority_queue <int, vector<int>, greater<int> > pq;
+Min heap in cpp : priority_queue \<int, vector\<int\>, greater\<int\> \> pq;
