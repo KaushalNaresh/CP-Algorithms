@@ -13,10 +13,17 @@ Helpful blog : https://hackernoon.com/14-patterns-to-ace-any-coding-interview-qu
 priority_queue <int, vector<int>, greater<int>> pq;
 ```
 2. How to create a Comparator function for sort, queues etc.
+- using operator overloading
 ```cpp
 struct compare{
   bool operator()(Type val1, Type val2){
     return val1 < val2;
   }
 };
+```
+-using static method
+```cpp
+static bool compare(Type val1, Type val2){
+  return val1 < val2;
+}
 ```
