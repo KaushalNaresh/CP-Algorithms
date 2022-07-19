@@ -21,7 +21,7 @@ struct compare{
   }
 };
 ```
--using static method
+- using static method
 ```cpp
 static bool compare(Type val1, Type val2){
   return val1 < val2;
