@@ -6,6 +6,7 @@ For practice solve https://leetcode.com/discuss/general-discussion/460599/blind-
 Helpful blog : https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
 
 
-Quick Notes :
+## Quick Notes :
 
-Min heap in cpp : priority_queue \<int, vector\<int\>, greater\<int\> \> pq;
+1. Min heap in cpp : ```cpp priority_queue \<int, vector\<int\>, greater\<int\> \> pq; ```
+2. 
