@@ -9,7 +9,6 @@ Helpful blog : https://hackernoon.com/14-patterns-to-ace-any-coding-interview-qu
 ## Quick Notes :
 
 1. Min heap in cpp : 
-
 ```cpp
 priority_queue <int, vector<int>, greater<int>> pq;
 ```
