@@ -12,4 +12,11 @@ Helpful blog : https://hackernoon.com/14-patterns-to-ace-any-coding-interview-qu
 ```cpp
 priority_queue <int, vector<int>, greater<int>> pq;
 ```
-3. 
+2. How to create a Comparator function for sort, queues etc.
+```cpp
+struct compare{
+  bool operator()(Type val1, Type val2){
+    return val1 < val2;
+  }
+};
+```
