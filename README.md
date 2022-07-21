@@ -27,3 +27,10 @@ static bool compare(Type val1, Type val2){
   return val1 < val2;
 }
 ```
+3. C++ upper_bound function
+```cpp
+vector<int> vec = {1,2,3,4,5};
+int target = 3;
+auto it = upper_bound(vec.begin(), vec.end(), target); // returns iterator to index 3
+cout<<*it; // prints 4 i.e. value at index 3
+```
