@@ -10,7 +10,7 @@ public:
 
     int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
         
-        int n = profit.size(), maxSoFar = INT_MIN;
+        int n = profit.size();
         vector<pair<pair<int, int>, int>> vec(n);
 
         for(int i = 0; i < n; i++){
@@ -20,7 +20,8 @@ public:
         sort(vec.begin(), vec.end());
         vector<int> dp(n);
         dp[n-1] = vec[n-1].second;
-
+        int maxSoFar = vec[n-1].second;
+        
         for(int i = n-2; i >= 0; i--){
             auto itr = upper_bound(vec.begin()+i+1, vec.end(), vec[i], compare);
             int maxAfterEnd = itr == vec.end() ? 0 : dp[itr-vec.begin()];
