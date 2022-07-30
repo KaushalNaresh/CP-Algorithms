@@ -12,9 +12,7 @@ public:
         pq.push({nums1[0]+nums2[0], {0, 0}});
         s.insert({0,0});
         
-        while(!pq.empty()){
-            if(k == 0)
-                break;
+        while(k && !pq.empty()){
             
             pair<int, vector<int>> p = pq.top();
             vector<int> vec = p.second;
