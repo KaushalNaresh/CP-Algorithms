@@ -1,3 +1,27 @@
+/*
+    Several solutions from naive to more elaborate. I found it helpful to visualize the input as an m×n matrix of sums, 
+    for example for nums1=[1,7,11], and nums2=[2,4,6]:
+          2   4   6
+        +------------
+     1 |  3   5   7
+     7 |  9  11  13
+    11 | 13  15  17
+
+    Of course the smallest pair overall is in the top left corner, the one with sum 3. We don't even need to look anywhere else. 
+    After including that pair in the output, the next-smaller pair must be the next on the right (sum=5) or the next below (sum=9). 
+    We can keep a "horizon" of possible candidates, implemented as a heap / priority-queue, and roughly speaking we'll grow from
+    the top left corner towards the right/bottom.
+
+    # # # # # ? . .
+    # # # ? ? . . .
+    # ? . . . . . .   "#" means pair already in the output
+    # ? . . . . . .   "?" means pair currently in the queue
+    # ? . . . . . .
+    ? . . . . . . .
+    . . . . . . . .
+*/
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
