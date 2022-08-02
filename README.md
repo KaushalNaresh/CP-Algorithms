@@ -34,7 +34,9 @@ int target = 3;
 auto it = upper_bound(vec.begin(), vec.end(), target); // returns iterator to index 3
 cout<<*it; // prints 4 i.e. value at index 3
 ```
-4. Comparator function of upper_bound function
+4. C++ lower_bound function : The lower_bound() method in C++ is used to return an iterator pointing to the first element in the range \[first, last\] which has a value not less than val. This means that the function returns an iterator pointing to the next smallest number just greater than or equal to that number. If there are multiple values that are equal to val, lower_bound() returns the iterator of the first such value.
+
+5. Comparator function of upper_bound function
 ```cpp
 static bool compare(int target, int val){  // first argument must always be target and second must point to forward iterator
   return val >= target;
