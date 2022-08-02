@@ -27,7 +27,7 @@ static bool compare(Type val1, Type val2){
   return val1 < val2;
 }
 ```
-3. C++ upper_bound function
+3. C++ upper_bound function : It returns an iterator pointing to the first element in the range \[first, last\] that is greater than value, or last if no such element is found. 
 ```cpp
 vector<int> vec = {1,2,3,4,5};
 int target = 3;
