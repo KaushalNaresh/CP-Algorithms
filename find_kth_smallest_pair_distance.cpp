@@ -34,7 +34,7 @@ public:
     }
 
     /*
-        Time Complexity : O(nlogn) where n is maximum diff between nums[0] and nums[-1]
+        Time Complexity : O(nlogn) where n is diff between nums[0] and nums[-1]
         Space Complexit : O(1)
     */
 
