@@ -254,6 +254,7 @@ void printGraph(){
 
 int main(){
 
+    cout<<"Enter number of rows and columns :"<<endl;
     cin>>rows>>cols;
 
     graph = vector<vector<int>>(rows, vector<int>(cols, 15));
