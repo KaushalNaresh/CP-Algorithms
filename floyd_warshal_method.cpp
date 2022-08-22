@@ -21,7 +21,7 @@ void prepareMatrix(vector<pair<int, int>>& edges, vector<int>& weights, vector<v
         matrix[i][i] = 0;
 }
 
-void bellmanFord(vector<vector<int>>& matrix, int n){
+void floyd_warshal(vector<vector<int>>& matrix, int n){
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
@@ -60,5 +60,5 @@ int main(){
     }
 
     prepareMatrix(edges, weights, matrix);
-    bellmanFord(matrix, size);
+    floyd_warshal(matrix, size);
 }
