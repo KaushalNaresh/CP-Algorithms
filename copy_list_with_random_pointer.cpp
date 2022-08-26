@@ -23,46 +23,39 @@ public:
         
         unordered_map<Node*, Node*> m;
         Node *temp = head;
-        Node *head2 = NULL, *temp2 = NULL, *node;
+        Node *head2 = NULL, *temp2 = NULL, *node, *prev = NULL;
         
         while(temp != NULL){
             
             if(head2 == NULL){
                 head2 = new Node(temp->val);
                 m[temp] = head2;
-                temp2 = head2;
-                if(temp->random && !m.count(temp->random)){
-                    head2->random = new Node(temp->random->val);
-                    m[temp->random] = head2->random;
-                }
-                else if(temp->random){
-                    head2->random = m[temp->random];
-                }
             }
             else{
                 if(!m.count(temp)){
                     node = new Node(temp->val);
                     m[temp] = node;
-                    temp2->next = node;
+                    prev->next = node;
                 }
                 else{
-                    temp2->next = m[temp];
+                    prev->next = m[temp];
                 }
-                
-                if(temp->random){
-                    if(m[temp->random])
-                        temp2->next->random = m[temp->random];
-                    else{
-                        Node* randNode = new Node(temp->random->val);
-                        temp2->next->random = randNode;
-                        m[temp->random] = randNode;
-                    }
-                }
-                temp2 = temp2->next;    
+                    
             }
+            
+            if(temp->random){
+                if(m[temp->random])
+                    m[temp]->random = m[temp->random];
+                else{
+                    Node* randNode = new Node(temp->random->val);
+                    m[temp]->random = randNode;
+                    m[temp->random] = randNode;
+                }
+            }
+            prev = m[temp];
             temp = temp->next;
+            
         }
-        
         return head2;
     }
 };
