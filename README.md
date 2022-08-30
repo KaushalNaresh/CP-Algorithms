@@ -15,7 +15,7 @@ Helpful blogs
 ```cpp
 priority_queue <int, vector<int>, greater<int>> pq;
 ```
-2. How to create a Comparator function for sort, queues etc.
+2. How to create a Comparator function for sort function in queues etc.
 - using operator overloading for priority queues
 ```cpp
 struct compare{
