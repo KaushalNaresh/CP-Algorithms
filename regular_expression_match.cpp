@@ -32,15 +32,15 @@ class TrieNode{
         for(int i = 0; i < pattern.size(); i++){
             if(pattern[i] == '*')
                 node = this;
-            else if(pattern[i] == '?'){
-                for(int j = 0; j < 26; j++){
-                    if(node->neigh[j])
-                        if(checkIfMatch(pattern.substr(i+1, pattern.size()-i-1), node->neigh[j]))
-                            return 1;
-                }
-                return 0;
+            // else if(pattern[i] == '?'){
+            //     for(int j = 0; j < 26; j++){
+            //         if(node->neigh[j])
+            //             if(checkIfMatch(pattern.substr(i+1, pattern.size()-i-1), node->neigh[j]))
+            //                 return 1;
+            //     }
+            //     return 0;
                 
-            }
+            // }
             else{
                 if(node->neigh[pattern[i]-'a'])
                     node = node->neigh[pattern[i]-'a'];
