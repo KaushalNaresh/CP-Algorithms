@@ -18,8 +18,6 @@ nCols = int(len(rows[0].split()))
 
 graph = [[0 for i in range(nCols)] for j in range(nRows)]
 
-# print(nRows," ",nCols,"\n")
-
 i = 0
 for row in rows:
     
@@ -31,15 +29,12 @@ for row in rows:
             continue
 
         val = int(val)
-        # print(val,"\n")
         graph[i][j] = val
         t1.pendown()
         ## Drawing the north wall
         if int(val & 1) == 1:
-            # print("North down\n")
             t1.forward(dist)
         elif int(val & 1) == 0:
-            # print("North up\n")
             t1.penup()
             t1.forward(dist)
         
@@ -48,10 +43,8 @@ for row in rows:
 
         ## Drawing the east wall
         if int(val & 4) == 4:
-            # print("East down\n")
             t1.forward(dist)
         elif int(val & 4) == 0:
-            # print("East up\n")
             t1.penup()
             t1.forward(dist)
 
@@ -60,10 +53,8 @@ for row in rows:
 
         ## Drawing the south wall
         if int(val & 2) == 2:
-            # print("South down\n")
             t1.forward(dist)
         elif int(val & 2) == 0:
-            # print("South up\n")
             t1.penup()
             t1.forward(dist)
         
@@ -72,10 +63,8 @@ for row in rows:
 
         ## Drawing the west wall
         if int(val & 8) == 8:
-            # print("West down\n")
             t1.forward(dist)
         elif int(val & 8) == 0:
-            # print("West up\n")
             t1.penup()
             t1.forward(dist)
         
@@ -98,8 +87,6 @@ input()
 ## Drwaing DFS Path
 
 def getDirec(idx1, idx2):
-
-    # print(idx1," ",idx2," ",idx1+nCols == idx2,"\n")
 
     
     if (idx1-nCols) == idx2:
@@ -128,22 +115,13 @@ prev = 1
 for i in path.split()[1:]:
     
     i = int(i)
-    # print(i,'\n')
     currx = (i-1)//nCols 
     curry = (i-1)%nCols
 
-    prevx = (prev-1)//nCols; 
+    prevx = (prev-1)//nCols
     prevy = (prev-1)%nCols
 
-    # print("prev ",prevx," ",prevy,"\n") 46
-    # print("curr ",currx," ",curry,"\n") 36
-
-    # if(prev == 46 and i == 36):
-    #     print(graph[prevx][prevy]," ",graph[prevx][prevy])
-
     direc = getDirec(prev, i)
-
-    # print(prev," ",i," ",nCols," ",direc,"\n")
 
     if(direc == "NORTH"):
         t1.left(90)
@@ -154,7 +132,6 @@ for i in path.split()[1:]:
         t1.forward(dist)
         t1.left(90)
     elif(direc == "EAST"):
-        # t1.left(90)
         t1.forward(dist)
     elif(direc == "WEST"):
         t1.left(90)
@@ -187,22 +164,13 @@ prev = 1
 for i in path.split()[1:]:
     
     i = int(i)
-    # print(i,'\n')
     currx = (i-1)//nCols 
     curry = (i-1)%nCols
 
-    prevx = (prev-1)//nCols; 
+    prevx = (prev-1)//nCols 
     prevy = (prev-1)%nCols
 
-    # print("prev ",prevx," ",prevy,"\n") 46
-    # print("curr ",currx," ",curry,"\n") 36
-
-    # if(prev == 46 and i == 36):
-    #     print(graph[prevx][prevy]," ",graph[prevx][prevy])
-
     direc = getDirec(prev, i)
-
-    # print(prev," ",i," ",nCols," ",direc,"\n")
 
     if(direc == "NORTH"):
         t1.left(90)
@@ -213,7 +181,6 @@ for i in path.split()[1:]:
         t1.forward(dist)
         t1.left(90)
     elif(direc == "EAST"):
-        # t1.left(90)
         t1.forward(dist)
     elif(direc == "WEST"):
         t1.left(90)
