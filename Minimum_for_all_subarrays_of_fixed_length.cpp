@@ -67,3 +67,39 @@ int main(){
     }
 
 }
+
+
+// Maximum of all subarrays of given size
+
+class Solution {
+public:
+    
+    void addToDeque(int i, deque<int>& dq, vector<int>& nums){
+        
+        while(!dq.empty() && nums[dq.back()] <= nums[i])
+            dq.pop_back();
+        
+        dq.push_back(i);
+    }
+    
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        
+        int n = nums.size();
+        deque<int> dq;
+        vector<int> ans;
+        
+        for(int i = 0; i < n; i++){
+            if(i < k-1)
+                addToDeque(i, dq, nums);
+            else{
+                addToDeque(i, dq, nums);
+                ans.push_back(nums[dq.front()]);
+                
+                if(i-dq.front()+1 >= k)
+                    dq.pop_front();
+            }
+        }
+        
+        return ans;
+    }
+};
