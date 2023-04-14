@@ -59,7 +59,7 @@ int findMedian(vector<int> arr, int idx){
     //T(7n/10) 
 
     if(idx < sl){
-        vector<int> sl_array(arr.begin(), arr.begin()+sl-1);
+        vector<int> sl_array(arr.begin(), arr.begin()+sl);
         return findMedian(sl_array, idx);
     }
     else if(idx >= sl && idx < sl+sv)
