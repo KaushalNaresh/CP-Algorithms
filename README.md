@@ -7,6 +7,7 @@ Helpful blogs
 1. https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
 2. https://jeremyaguilon.me/blog/ranking_interview_questions_by_cram_score
 3. https://pittcs.wiki/zero-to-offer/ace-your-interview
+4. https://www.baeldung.com/java-sorting-arrays-with-repeated-entries
 
 
 ## Quick Notes :
