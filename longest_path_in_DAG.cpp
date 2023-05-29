@@ -12,10 +12,11 @@ int main(){
         cin>>src>>dest>>cost;
         if(graph.count(src)){
             graph[src].push_back({dest, cost});
+        }
+        else{
+            graph[src] = {{dest, cost}};
             verts++;
         }
-        else
-            graph[src] = {{dest, cost}};
         
         if(!graph.count(dest)){
             graph[dest] = {};
@@ -51,7 +52,7 @@ int main(){
             inDegree[itr->first]--;
             if(inDegree[itr->first] == 0)
                 q.push(itr->first);
-            if(totalCost[itr->first] == FLT_MIN)
+            if(totalCost[itr->first] == FLT_MIN) // why this?
                 totalCost[itr->first] = itr->second;
             else 
                 totalCost[itr->first] = max(totalCost[itr->first], totalCost[ver]*itr->second);
