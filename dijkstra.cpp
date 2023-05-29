@@ -1,3 +1,11 @@
+/*
+Dijkstra algorithm is used to find shortest distance between src and all
+other nodes, it cannot handle negative cycles in graphs.
+
+Dijkstra algorithm can be modified to get longest path but only in 
+acyclic graphs or DAG's
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
