@@ -25,8 +25,9 @@ struct compare{
     return val1 < val2;
   }
 };
-There is a catch here, for priority queues comparator function creates heap with top element from the right of sorted array. So if your comp function returns true for < then pq will be maxHeap.
 ```
+There is a catch here, for priority queues comparator function creates heap with top element from the right of sorted array. So if your comp function returns true for < then pq will be maxHeap.
+
 - using static method for sort function
 ```cpp
 static bool compare(Type val1, Type val2){
