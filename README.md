@@ -155,6 +155,7 @@ As mentioned in point 9, we cannot create a thread-safe generator in a similar m
 
 ```python
 import threading
+
 class threadsafe_iter():
   def __init__(self, f):
     self.it = f
