@@ -61,6 +61,7 @@ Initialise distance of origin as 0. Now using 2 for loops one running for number
 Both Bellman ford and flloyd warshal method detects negative cycle, but Bellman ford gives shortest distance from origin to all nodes whereas as Flloyd Warshal gives shortest between any 2 nodes. 
 
 8. Brief summary on iterators and generators in python:
+
 A generic example example of iterator, it reqires __iter__ method, __next__method apart from __init__ method
 ```python
 class Counter:
