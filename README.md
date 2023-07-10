@@ -58,6 +58,125 @@ auto it = upper_bound(vec.begin(), vec.end(), target, compare); // returns itera
 Initialise distance of origin as 0. Now using 2 for loops one running for number of vertices and other over edges, you have to check if distance of any node decreases, if yes then update the distance. After this 2 for loop if distance of any node still reduces then there is a negative cycle, otherwise distance array will give minimum distance to all nodes from origin.  
 
 7. Flloyd-Warshal method:  
-Both Bellman ford and flloyd warshal method detects negative cycle, but Bellman ford gives shortest distance from origin to all nodes whereas as Flloyd Warshal gives shortest between any 2 nodes.  
+Both Bellman ford and flloyd warshal method detects negative cycle, but Bellman ford gives shortest distance from origin to all nodes whereas as Flloyd Warshal gives shortest between any 2 nodes. 
 
+8. Brief summary on iterators and generators in python:
+A generic example example of iterator, it reqires __iter__ method, __next__method apart from __init__ method
+```python
+class Counter:
+  def __init__(self, n):
+    self.i = 0
+    self.n = n
 
+  def __iter__(self):
+    return self
+
+  def __next__(self):
+    while(self.i < self.n)
+      self.i += 1
+      return self.i
+    return -1  # End of iterator
+```
+
+Counter is iterable class to convert it into iterator use iter(Counter) and to get the next element use next(Counter).
+
+A generic example of generator
+
+```python
+def count(n):
+  i = 0
+  while i < n:
+    i += 1
+    yield i
+  return -1  # End of generator function
+```
+
+count is a generator function and to get the next value from this generator use next(count). We can write a generator in the form of list comprehension by using '()' braces and not '[]'
+
+9. How to make a threadsafe iterator:
+
+In multithreading, we often encounter the challenge of synchronization. It becomes necessary to ensure that iterators are thread-safe because multiple threads can potentially access the next method simultaneously. To address this issue, we can utilize locks in Python.
+
+```python
+import threading 
+class Counter:
+  def __init__(self, n):
+    self.i = 0
+    self.n = n
+    self.lock = threading.Lock()
+
+  def __iter__(self):
+    return self
+
+  def __next__(self):
+    while(self.i < self.n):
+      # acquire/release the lock when updating self.i
+      with self.lock:
+        self.i += 1
+        return self.i
+    return -1  # End of iterator
+```
+
+The same cannot be done with generators since we don't have direct access to their next method. However, we can employ decorators and encapsulate the generator within a thread-safe iterator to ensure its thread safety.
+
+10. Decaoraters
+
+let's say we have function func()
+
+```python
+  def func(a, b, c = 0):
+    sum = a+b+c
+    return sum
+```
+Suppose we want to include additional computations before executing func() and utilize its return value in subsequent computations, all without modifying the func() itself. In such cases, we can achieve this by utilizing decorators.
+
+```python
+  def decorator(func):
+    def wrapper(*args, **kwargs):
+      numb = 9
+      val = func(*args, **kwargs)
+      return val*numb
+    return wrapper
+
+  @decorator
+  def func(a, b, c = 0):
+    sum = a+b+c
+    return sum
+
+  print(func(1, 2, c = 3))
+```
+
+This will return 54
+
+11. How to make threadsafe generator:
+
+As mentioned in point 9, we cannot create a thread-safe generator in a similar manner as we did for a thread-safe iterator. However, we can achieve thread safety for a generator by creating a thread-safe iterator and encapsulating the generator within it.
+
+```python
+import threading
+class threadsafe_iter():
+  def __init__(self, f):
+    self.it = f
+    self.lock = threading.Lock()
+
+  def __iter__(self):
+    return self
+
+  def __next__(self):
+    with self.lock:
+      return self.it.__next__()
+
+def threadsafe_generator(f):
+  def g(*args, **kwargs):
+    return threadsafe_iter(f(*args, **kwargs))
+  return g
+
+@threadsafe_generator
+def count(n):
+  i = 0
+  while i < n:
+    i += 1
+    yield i
+  return -1  # End of generator function
+
+```
