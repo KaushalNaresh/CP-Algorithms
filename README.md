@@ -120,7 +120,7 @@ class Counter:
 
 The same cannot be done with generators since we don't have direct access to their next method. However, we can employ decorators and encapsulate the generator within a thread-safe iterator to ensure its thread safety.
 
-10. Decaoraters
+10. Decorators:
 
 let's say we have function func()
 
