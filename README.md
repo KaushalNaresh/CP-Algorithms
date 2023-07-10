@@ -62,7 +62,7 @@ Both Bellman ford and flloyd warshal method detects negative cycle, but Bellman 
 
 8. Brief summary on iterators and generators in python:
 
-A generic example example of iterator, it reqires \_\_iter__ method, \_\_next__ method apart from \_\_init__ method
+- A generic example example of iterator, it reqires \_\_iter__ method, \_\_next__ method apart from \_\_init__ method
 ```python
 class Counter:
   def __init__(self, n):
@@ -81,7 +81,7 @@ class Counter:
 
 Counter is iterable class to convert it into iterator use iter(Counter) and to get the next element use next(Counter).
 
-A generic example of generator
+- A generic example of generator
 
 ```python
 def count(n):
