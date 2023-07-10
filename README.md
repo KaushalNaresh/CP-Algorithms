@@ -9,7 +9,7 @@ Helpful blogs
 3. https://pittcs.wiki/zero-to-offer/ace-your-interview
 4. https://www.baeldung.com/java-sorting-arrays-with-repeated-entries
 5. https://hideoushumpbackfreak.com/
-
+6. https://github.com/Chanda-Abdul/Several-Coding-Patterns-for-Solving-Data-Structures-and-Algorithms-Problems-during-Interviews
 
 ## Quick Notes :
 
@@ -60,7 +60,7 @@ Initialise distance of origin as 0. Now using 2 for loops one running for number
 7. Flloyd-Warshal method:  
 Both Bellman ford and flloyd warshal method detects negative cycle, but Bellman ford gives shortest distance from origin to all nodes whereas as Flloyd Warshal gives shortest between any 2 nodes. 
 
-8. Brief summary on iterators and generators in python:
+8. Brief summary on iterators and generators in python [(Link)](https://anandology.com/blog/using-iterators-and-generators/):
 
 - A generic example example of iterator, it reqires \_\_iter__ method, \_\_next__ method apart from \_\_init__ method
 ```python
