@@ -25,6 +25,8 @@ public:
             return parent[v] = find(parent[v]);
         }
 
+
+        // We can use union by rank by that we can keep trak of max size of the union tree and if its not equal to total vertices then graph is disconnected
         bool Union(int v1, int v2){
                 
             int p1 = find(v1);
@@ -67,6 +69,8 @@ public:
             }
         }
 
+
+        // to check if the graph is connected
         int root = uf->find(0);
         for(int i = 1; i < n; i++){
             if(root != uf->find(i))
