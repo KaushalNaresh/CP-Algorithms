@@ -99,3 +99,93 @@ int main(){
     for(auto i : ans)
         cout<<i<<" ";
 }
+
+
+
+class Solution {
+public:
+
+    vector<pair<int, int>> merge(vector<pair<int, int>> &left, vector<pair<int, int>> &right){
+
+        vector<pair<int, int>> mergedArr;
+        int lptr = 0, rptr = 0;
+
+        while(lptr < left.size() && rptr < right.size()){
+            if(left[lptr].first <= right[rptr].first){
+                mergedArr.push_back(left[lptr]);
+                lptr++;
+            }
+            else{
+                mergedArr.push_back(right[rptr]);
+                rptr++;
+            }
+        }
+
+        while(lptr < left.size()){
+            mergedArr.push_back(left[lptr]);
+            lptr++;
+        }
+
+        while(rptr < right.size()){
+            mergedArr.push_back(right[rptr]);
+            rptr++;
+        }
+
+        return mergedArr;
+
+    }
+
+    vector<pair<int, int>> utilFunc(vector<pair<int, int>> &vec, vector<int> &ans, int lb, int ub){
+
+        if(lb == ub)
+            return {vec[lb]};
+
+        if(ub-lb+1 == 2){
+            if(vec[ub].first < vec[lb].first){
+                ans[vec[lb].second]++;
+                return {vec[ub], vec[lb]};
+            }
+            else
+                return {vec[lb], vec[ub]};
+        }
+
+        int mid = (lb + ub)/2;
+
+        vector<pair<int, int>> left = utilFunc(vec, ans, lb, mid);
+        vector<pair<int, int>> right = utilFunc(vec, ans, mid+1, ub);
+
+        int count = 0, lptr = 0, rptr = 0;
+
+        while(lptr < left.size() && rptr < right.size()){
+
+            if(right[rptr] < left[lptr]){
+                count++;
+                rptr++;
+            }
+            else{
+                ans[left[lptr].second] += count;
+                lptr++;
+            }
+        }
+
+        while(lptr < left.size()){
+            ans[left[lptr].second] += count;
+            lptr++;
+        }
+
+        return merge(left, right);
+    }
+
+    vector<int> countSmaller(vector<int>& nums) {
+        
+        int n = nums.size();
+        vector<pair<int, int>> vec;
+        for(int i = 0; i < n; i++)
+            vec.push_back({nums[i], i});
+
+        vector<int> ans(n, 0);
+        utilFunc(vec, ans, 0, n-1);
+
+        return ans;
+    }
+};
