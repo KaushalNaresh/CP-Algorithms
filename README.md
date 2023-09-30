@@ -55,7 +55,7 @@ auto it = upper_bound(vec.begin(), vec.end(), target, compare); // returns itera
 ```
 
 6. Bellman Ford Algorithm:  
-Initialise distance of origin as 0. Now using 2 for loops one running for number of vertices and other over edges, you have to check if distance of any node decreases, if yes then update the distance. After this 2 for loop if distance of any node still reduces then there is a negative cycle, otherwise distance array will give minimum distance to all nodes from origin.  
+Initialise distance of origin as 0. Now using 2 for loops one running for number of vertices and other over edges, you have to check if distance of any node decreases, if yes then update the distance. After these 2 for loops, if distance of any node drops more then there is a negative cycle, otherwise distance array will give minimum distance to all nodes from origin.  
 
 7. Flloyd-Warshal method:  
 Both Bellman ford and flloyd warshal method detects negative cycle, but Bellman ford gives shortest distance from origin to all nodes whereas as Flloyd Warshal gives shortest between any 2 nodes. 
