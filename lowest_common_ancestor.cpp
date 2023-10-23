@@ -44,7 +44,7 @@ public:
     
     /*
         Method 2 : Using recursion and BST properties
-        Time Complexity : O(H) where H is the height of a tree
+        Time Complexity : O(N) where N is the number of nodes in a tree
         Space somplexity : O(1)
     */
 
@@ -54,5 +54,20 @@ public:
             root = p->val > root->val ? root->right : root->left;
         
         return root;
+    }
+
+     /*
+        Method 3 : Using recursion
+        Time Complexity : O(N) where N is the number of nodes in a tree
+        Space somplexity : O(N)
+    */
+
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+
+        if (!root || root == p || root == q) return root;
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+        return !left ? right : !right ? left : root;
+
     }
 };
