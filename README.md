@@ -11,6 +11,7 @@ Helpful blogs
 5. https://hideoushumpbackfreak.com/
 6. https://github.com/Chanda-Abdul/Several-Coding-Patterns-for-Solving-Data-Structures-and-Algorithms-Problems-during-Interviews
 7. [Code signal questions](https://codesignal.com/blog/interview-prep/example-codesignal-questions/?utm_source=google&utm_medium=cpc&utm_term=b_codility%2520assessment&utm_campaign=branded&gad_source=1&gclid=Cj0KCQjw8J6wBhDXARIsAPo7QA8acXbKQRMcSkkz-yIl9CB0A0ZbhpP6P3Pl8MwHEhRdPRPCQyVMUw4aAsgNEALw_wcB)
+8. [Code signal working solutions](https://github.com/GeorgiosEv/CodeSignal-WorkingSolutions)
 
 ## Quick Notes :
 
