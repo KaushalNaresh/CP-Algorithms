@@ -12,6 +12,8 @@ Helpful blogs
 6. https://github.com/Chanda-Abdul/Several-Coding-Patterns-for-Solving-Data-Structures-and-Algorithms-Problems-during-Interviews
 7. [Code signal questions](https://codesignal.com/blog/interview-prep/example-codesignal-questions/?utm_source=google&utm_medium=cpc&utm_term=b_codility%2520assessment&utm_campaign=branded&gad_source=1&gclid=Cj0KCQjw8J6wBhDXARIsAPo7QA8acXbKQRMcSkkz-yIl9CB0A0ZbhpP6P3Pl8MwHEhRdPRPCQyVMUw4aAsgNEALw_wcB)
 8. [Code signal working solutions](https://github.com/GeorgiosEv/CodeSignal-WorkingSolutions)
+9. [Binary search template](https://leetcode.com/discuss/general-discussion/786126/python-powerful-ultimate-binary-search-template-solved-many-problems)
+10. [Graph algorithms](https://leetcode.com/discuss/general-discussion/969327/Graph-Algorithms-One-Place-or-Dijkstra-or-Bellman-Ford-or-Floyd-Warshall-or-Prims-or-Kruskals-or-DSU)
 
 ## Quick Notes :
 
