@@ -186,3 +186,42 @@ def count(n):
   return -1  # End of generator function
 
 ```
+
+Maximize k , s.t. condition(k) is True
+
+``` python
+def binary_search(array) -> int:
+    def condition(value) -> bool:
+        pass
+
+    left, right = min(search_space), max(search_space)
+    result = -1  
+
+    while left <= right:
+        mid = left + (right - left) // 2
+        if condition(mid):
+            result = mid       
+            left = mid + 1    
+        else:
+            right = mid - 1    
+
+    return result
+```
+
+Minimize k , s.t. condition(k) is True
+
+``` python
+def binary_search(array) -> int:
+    def condition(value) -> bool:
+        pass
+
+    left, right = min(search_space), max(search_space) 
+
+    while left < right:
+        mid = left + (right - left) // 2
+        if condition(mid):
+            right = mid
+        else:
+            left = mid + 1
+    return left
+```
