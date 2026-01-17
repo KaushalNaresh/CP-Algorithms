@@ -78,8 +78,14 @@ class Solution{
 
 int main(){
 
-    vector<string> words = {"rgdcsqcbkmksormnultmifcqzyhfiecemfrarrjavzsfjjulamrrgvnjvmfjmfutvrbmapbcjjbdlpgmwhtmluxhhrchdokgqteo", "tmonqbvoeevajolnktcvnyaskynoulktbofblxbheiqyiclcbpebbwmuzsdosknmbeoryeejtybvtpgghsniicyizgcfaqajsrij", "gkrsgyjmhcfutefpxmuzqdptzwoyirzyxpyqygboweyuslarsksjyiiakcnjjvlqbynzngkfdgrbrpypwdndpytygcszkmouchom", "irxxmyfbwrxenzrwfxoicfphlzlroaxitagtiodscuchdhjylxfkrjmwmzdtmymeyerihjrdppmitipnzezfrqvhvlqykykgpcce", "bmbhhozjevhvspwepgepmzkqreqqynjndgtugkuaauvmajbeubaqnlguhbgwttyirwkmzgtpouvwnxepmetqyczdiqfwtucmpsqt"};
+    vector<string> words = {
+        "rgdcsqcbkmksormnultmifcqzyhfiecemfrarrjavzsfjjulamrrgvnjvmfjmfutvrbmapbcjjbdlpgmwhtmluxhhrchdokgqteo", 
+        "tmonqbvoeevajolnktcvnyaskynoulktbofblxbheiqyiclcbpebbwmuzsdosknmbeoryeejtybvtpgghsniicyizgcfaqajsrij", 
+        "gkrsgyjmhcfutefpxmuzqdptzwoyirzyxpyqygboweyuslarsksjyiiakcnjjvlqbynzngkfdgrbrpypwdndpytygcszkmouchom", 
+        "irxxmyfbwrxenzrwfxoicfphlzlroaxitagtiodscuchdhjylxfkrjmwmzdtmymeyerihjrdppmitipnzezfrqvhvlqykykgpcce", 
+        "bmbhhozjevhvspwepgepmzkqreqqynjndgtugkuaauvmajbeubaqnlguhbgwttyirwkmzgtpouvwnxepmetqyczdiqfwtucmpsqt"
+    };
+
     Solution* sol = new Solution();
-    
     cout<<sol->alienOrder(words);
 }
